@@ -1,6 +1,7 @@
 package com.test.paradoxdemo.application
 
 import android.app.Application
+import com.test.paradoxdemo.network.di.retrofitModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.KoinApplication
@@ -8,7 +9,6 @@ import org.koin.core.context.GlobalContext
 import org.koin.core.context.loadKoinModules
 import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
-import org.koin.core.module.Module
 
 class KoinStarter {
 
@@ -32,5 +32,5 @@ class KoinStarter {
         }
     }
 
-    private fun getModules(): List<Module> = listOf()
+    private fun getModules() = listOf(retrofitModule)
 }
