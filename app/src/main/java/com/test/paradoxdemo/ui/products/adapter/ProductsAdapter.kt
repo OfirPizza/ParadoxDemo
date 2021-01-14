@@ -30,6 +30,10 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductsViewHolder>
         data.addAll(newData)
     }
 
+    fun clearData() {
+        data.clear()
+    }
+
     inner class ProductsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(
             item: ProductItemUiModel

@@ -21,12 +21,18 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     private fun initViewModel() {
         viewModel.apply {
-            fragmentLiveData.observe(viewLifecycleOwner, { showFragment(it) })
+            fragmentLiveData.observe(viewLifecycleOwner, {
+                setSearchView(it)
+                showFragment(it)
+            })
         }
     }
 
-    private fun showFragment(fragment: BaseProductsFragment) {
+    private fun setSearchView(fragment: BaseProductsFragment) {
+        search_view.setFragment(fragment)
+    }
 
+    private fun showFragment(fragment: BaseProductsFragment) {
         requireActivity().supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment, fragment::class.java.simpleName).commit()
     }

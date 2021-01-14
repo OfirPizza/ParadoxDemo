@@ -10,5 +10,8 @@ interface NetworkApi {
 
     @Headers("Content-Type: application/json")
     @GET("products")
-    suspend fun getProducts(@Query("page")page: Int): ProductsResponse
+    suspend fun getProducts(
+        @Query("page") page: Int,
+        @Query("name") name: String? = ""
+    ): ProductsResponse
 }

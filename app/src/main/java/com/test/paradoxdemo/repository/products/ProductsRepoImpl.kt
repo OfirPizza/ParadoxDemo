@@ -6,8 +6,8 @@ import com.test.paradoxdemo.util.Result
 
 class ProductsRepoImpl(private val service: NetworkApi) : ProductsRepo {
 
-    override suspend fun getProductList(pageNumber: Int): ProductsUiModel {
-        val result = Result.build { service.getProducts(pageNumber) }
+    override suspend fun getProductList(pageNumber: Int,name: String?): ProductsUiModel {
+        val result = Result.build { service.getProducts(pageNumber,name) }
         return when (result) {
             is Result.Value -> {
                 toUiProductList(result.value)

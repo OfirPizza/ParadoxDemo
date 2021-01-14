@@ -44,8 +44,7 @@ class ProductsFragment : BaseProductsFragment(R.layout.fragment_products) {
 
     private fun initViewModel() {
         viewModel.apply {
-            productsListLiveData.observe(viewLifecycleOwner,
-                { this@ProductsFragment.updateAdapter(it) })
+            productsListLiveData.observe(viewLifecycleOwner, { this@ProductsFragment.updateAdapter(it) })
             getProductList()
         }
     }
@@ -61,6 +60,9 @@ class ProductsFragment : BaseProductsFragment(R.layout.fragment_products) {
 
 
     override fun onSearchProduct(str: String) {
+        adapter.clearData()
+        adapter.notifyDataSetChanged()
+        viewModel.searchProductByName(str)
     }
 
     override fun onFilterProduct(id: Int) {

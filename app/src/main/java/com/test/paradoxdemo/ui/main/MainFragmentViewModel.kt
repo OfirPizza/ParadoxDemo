@@ -13,6 +13,9 @@ class MainFragmentViewModel : ViewModel() {
     private val fragmentMutableLiveData = MutableLiveData<BaseProductsFragment>()
     val fragmentLiveData: LiveData<BaseProductsFragment> = fragmentMutableLiveData
 
+    init {
+        onNavigationClick(BottomNavigation.BottomNavigationType.PRODUCTS)
+    }
 
     fun onNavigationClick(navigationType: BottomNavigation.BottomNavigationType) {
         when (navigationType) {

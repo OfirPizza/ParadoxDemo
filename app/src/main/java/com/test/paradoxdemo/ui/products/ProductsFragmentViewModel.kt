@@ -15,20 +15,32 @@ class ProductsFragmentViewModel(private val productsRepo: ProductsRepo) : ViewMo
 
     private var currentPage = 0
     private var maxPage = 1
+    private var currentNameSearch = ""
 
     private val productsListMutableLiveData = MutableLiveData<List<ProductItemUiModel>>()
     val productsListLiveData: LiveData<List<ProductItemUiModel>> = productsListMutableLiveData
 
 
     fun getProductList() {
-        if (currentPage > maxPage) {
+        if (currentPage >= maxPage) {
             return
         }
         CoroutineScope(IO).launch {
-            val productList = productsRepo.getProductList(currentPage++)
+            val productList = productsRepo.getProductList(currentPage++,currentNameSearch)
             setPagination(productList.pagination)
             postProductList(productList)
         }
+    }
+
+    fun searchProductByName(productName: String) {
+        currentNameSearch = productName
+        resetPagination()
+        getProductList()
+    }
+
+    private fun resetPagination() {
+        maxPage = 1
+        currentPage = 0
     }
 
 
