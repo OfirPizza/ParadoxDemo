@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/AppBackground">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14sp"
+        android:gravity="center"
+        android:text="Products"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/filter_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="@string/filter"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/search_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        app:cardBackgroundColor="@color/AppBackground"
+        app:cardElevation="0sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filter_btn">
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13sp"
+            android:layout_marginTop="16sp"
+            android:layout_marginEnd="20sp"
+            android:layout_marginBottom="16sp"
+            android:background="@drawable/white_rounded_corners_background"
+            android:cursorVisible="true"
+            android:hint="@string/search"
+            android:imeOptions="actionSearch"
+            android:inputType="textEmailSubject"
+            android:maxLines="1"
+            android:paddingStart="20sp"
+            android:paddingTop="4sp"
+            android:paddingBottom="4sp"
+            android:textCursorDrawable="@null" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1sp"
+            android:layout_gravity="bottom"
+            android:background="@color/gray" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
