@@ -2,6 +2,8 @@ package com.test.paradoxdemo.application
 
 import android.app.Application
 import com.test.paradoxdemo.network.di.retrofitModule
+import com.test.paradoxdemo.ui.main.di.mainFragmentModule
+import com.test.paradoxdemo.ui.products.di.productsFragmentModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.KoinApplication
@@ -32,5 +34,5 @@ class KoinStarter {
         }
     }
 
-    private fun getModules() = listOf(retrofitModule)
+    private fun getModules() = listOf(retrofitModule,mainFragmentModule, productsFragmentModule)
 }

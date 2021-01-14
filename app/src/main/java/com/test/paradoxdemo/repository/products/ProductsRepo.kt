@@ -1,6 +1,8 @@
 package com.test.paradoxdemo.repository.products
 
-interface ProductsRepo {
+import com.test.paradoxdemo.models.ProductsUiModel
 
+interface ProductsRepo {
+    suspend fun getProductList(pageNumber: Int) : ProductsUiModel
 
 }

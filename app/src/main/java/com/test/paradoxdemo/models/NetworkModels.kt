@@ -10,6 +10,11 @@ data class ProductsResponse(
 )
 
 data class PaginationResponse(
+    @SerializedName("pagination")
+    val pagination: PaginationItemResponse,
+)
+
+data class PaginationItemResponse(
     @SerializedName("pages")
     val totalPages: Int,
     @SerializedName("page")
