@@ -1,11 +1,10 @@
-package com.test.paradoxdemo.ui.products.adapter
+package com.test.paradoxdemo.ui.productsList.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.test.paradoxdemo.R
 import com.test.paradoxdemo.models.ProductItemUiModel
 import kotlinx.android.synthetic.main.list_product_item.view.*
@@ -41,8 +40,7 @@ class ProductsAdapter : RecyclerView.Adapter<ProductsAdapter.ProductsViewHolder>
             itemView.product_name.text = item.name
             itemView.product_price.text = item.price.toString()
             itemView.product_description.text = item.description
-            Glide.with(itemView).load(item.imageUrl).diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(itemView.product_img)
+            Glide.with(itemView).load(item.imageUrl).into(itemView.product_img)
             itemView.setOnClickListener {
                 onSelectedItem?.invoke(item)
 

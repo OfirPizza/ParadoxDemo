@@ -1,4 +1,4 @@
-package com.test.paradoxdemo.ui.products
+package com.test.paradoxdemo.ui.productsList
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -31,6 +31,7 @@ class ProductsFragmentViewModel(private val productsRepo: ProductsRepo) : ViewMo
             postProductList(productList)
         }
     }
+
 
     fun searchProductByName(productName: String) {
         currentNameSearch = productName

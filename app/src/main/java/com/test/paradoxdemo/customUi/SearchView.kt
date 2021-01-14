@@ -23,17 +23,30 @@ class SearchView @JvmOverloads constructor(
 
     private fun initViews() {
         search.setOnEditorActionListener(this)
+        search_btn.setOnClickListener {
+            onSearch(getSearchText())
+        }
     }
 
-     fun setFragment(fragment: BaseProductsFragment){
-         this.fragment = fragment
+    private fun getSearchText() = search.text.toString()
+
+    fun setFragment(fragment: BaseProductsFragment) {
+        this.fragment = fragment
     }
 
     override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
         if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-            fragment?.onSearchProduct(search.text.toString())
+            onSearch(getSearchText())
         }
         return false
+    }
+
+    fun setTitle(title: String) {
+        tv_title.text = title
+    }
+
+    private fun onSearch(str: String) {
+        fragment?.onSearchProduct(str)
     }
 
 

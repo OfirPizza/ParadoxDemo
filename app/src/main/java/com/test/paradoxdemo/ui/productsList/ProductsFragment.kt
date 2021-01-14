@@ -1,4 +1,4 @@
-package com.test.paradoxdemo.ui.products
+package com.test.paradoxdemo.ui.productsList
 
 import android.os.Bundle
 import android.view.View
@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.test.paradoxdemo.R
 import com.test.paradoxdemo.customUi.BaseProductsFragment
 import com.test.paradoxdemo.models.ProductItemUiModel
-import com.test.paradoxdemo.ui.products.adapter.ProductsAdapter
+import com.test.paradoxdemo.ui.product.DetailedProductFragment
+import com.test.paradoxdemo.ui.productsList.adapter.ProductsAdapter
 import kotlinx.android.synthetic.main.fragment_products.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -56,6 +57,8 @@ class ProductsFragment : BaseProductsFragment(R.layout.fragment_products) {
 
 
     private fun onItemSelected(item: ProductItemUiModel) {
+        val detailedProductFragment = DetailedProductFragment(item)
+        detailedProductFragment.show(requireActivity().supportFragmentManager,detailedProductFragment::class.java.simpleName)
     }
 
 
@@ -65,6 +68,4 @@ class ProductsFragment : BaseProductsFragment(R.layout.fragment_products) {
         viewModel.searchProductByName(str)
     }
 
-    override fun onFilterProduct(id: Int) {
-    }
 }

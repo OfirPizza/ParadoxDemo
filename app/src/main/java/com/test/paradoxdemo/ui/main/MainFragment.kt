@@ -22,13 +22,20 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private fun initViewModel() {
         viewModel.apply {
             fragmentLiveData.observe(viewLifecycleOwner, {
-                setSearchView(it)
+                setFragmentSearchView(it)
                 showFragment(it)
+            })
+            titleLiveData.observe(viewLifecycleOwner,{
+                setTitleSearchView(it)
             })
         }
     }
 
-    private fun setSearchView(fragment: BaseProductsFragment) {
+    private fun setTitleSearchView(title: String) {
+        search_view.setTitle(title)
+    }
+
+    private fun setFragmentSearchView(fragment: BaseProductsFragment) {
         search_view.setFragment(fragment)
     }
 

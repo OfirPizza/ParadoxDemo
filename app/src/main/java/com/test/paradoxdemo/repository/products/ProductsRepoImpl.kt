@@ -26,6 +26,7 @@ class ProductsRepoImpl(private val service: NetworkApi) : ProductsRepo {
 
     private fun toUiProductItem(itemResponse: ProductItemResponse): ProductItemUiModel {
         return ProductItemUiModel(
+            id = itemResponse.id,
             name = itemResponse.name,
             description = itemResponse.description,
             imageUrl = itemResponse.imageUrl,

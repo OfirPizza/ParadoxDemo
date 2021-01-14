@@ -2,6 +2,9 @@
     <string name="app_name">ParadoxDemo</string>
     <string name="products">PRODUCTS</string>
     <string name="favorite">FAVORITE</string>
+    <string name="add_as_favorite">Add as favorite</string>
+    <string name="remove_as_favorite">Remove as favorite</string>
     <string name="search">Search</string>
     <string name="filter">Filter</string>
+    <string name="start_search">Start search</string>
 </resources>

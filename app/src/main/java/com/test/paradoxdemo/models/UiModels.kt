@@ -6,6 +6,7 @@ data class ProductsUiModel(
 )
 
 data class ProductItemUiModel(
+    val id: Int,
     val name: String,
     val description: String,
     val imageUrl: String,

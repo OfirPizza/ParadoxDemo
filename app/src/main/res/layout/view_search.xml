@@ -21,14 +21,14 @@
 
 
     <TextView
-        android:id="@+id/filter_btn"
+        android:id="@+id/search_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@color/white"
         android:gravity="center"
         android:padding="4dp"
-        android:text="@string/filter"
+        android:text="@string/start_search"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/search_container"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +46,7 @@
         app:cardElevation="0sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/filter_btn">
+        app:layout_constraintTop_toBottomOf="@id/search_btn">
 
         <EditText
             android:id="@+id/search"
